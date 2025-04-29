@@ -1,0 +1,97 @@
+Condicional -> "InCase" condição bloco | "Echo" condição bloco | "Play" bloco "Over" condicao
+
+
+R -> "strx" strx "=" S 
+S -> plugIn(D)
+N -> "intx" declara | "strx" declara | "flx" declara 
+Booleano - "bool" C ????? 
+declara - strx "=" intx | strx "=" flx | strx "=" strx | strx "=" H | strx "=" M 
+B - I bloco | F bloco | W | $
+C - strx G C | num G C | H | $
+bloco - L 
+O - "Other" C B O | E | $
+E - "Else" B
+F - "Echo" C 
+G - ">" | "<" | "==" | "!=" | "<=" | ">="
+P - "</>" | "<x>" | "<->" | $
+H - True | False
+I - "InCase" C O
+J - "+" | "-" | "/" | "*" | "="
+K - "++" | "--"
+W - "Play" bloco A
+A - "Over" C 
+D - strx D | num D | $ 
+L - strx J L | num J L | goOut(add(D)) | reply strx | reply num | reply H | goOutln(add(D)) | $
+M - strx J M | num J M | $
+num - intx | flx
+
+strx - [aA-zZ]*
+intx - [0-9]*
+flx - [0-9]* "." [0-9]*
+
+
+intx x = 10;
+intx y = 5;
+
+InCase (x > y) {
+    goOutln("x é maior que y");
+} Other (x == y) { 
+    goOutln("x é igual a y");
+} Else {
+    goOutln("x é menor que y");
+}
+
+
+
+intx a = 15; 
+flx b = 3.5; 
+
+flx soma = a + b; // Soma [1]
+
+bool condicao1 = a > c; 
+bool condicao_composta = condicao1 <-> condicao2; 
+
+goOutln(add("Soma: ") + add(soma));
+
+strx nome_digitado = plugIn("Digite seu nome: "); 
+
+Echo (intx j = 1 ; j <= 3 ; j++){ 
+    goOut(add("Iteração ") + add(j));
+    goOutln("..."); 
+}
+
+
+Play { 
+    goOutln(add("Executando DoWhile. Contador: ") + add(contador_do)); 
+    contador_do = contador_do + 1; 
+} Over (contador_do < 3); 
+goOutln("Fim do laço DoWhile."); 
+
+
+intx idade = 25; 
+flx saldo = 150.75; // Declaração de float
+
+InCase (idade >= 18 <-> saldo > 100.0) { // Condição: (idade é maior ou igual a 18) E (saldo é maior que 100.0)
+    goOutln("Usuário maior de idade e com saldo suficiente."); // Executa se ambas as condições forem verdadeiras
+} Else { // Bloco Else
+    goOutln("Condição não atendida."); // Executa caso contrário
+}
+
+strx status = "ativo"; // Declaração de string
+intx tentativas_login = 0; // Declaração de inteiro
+
+InCase (status == "ativo" </> tentativas_login < 3) { // Condição: (status é "ativo") OU (tentativas_login é menor que 3)
+    goOutln("Acesso permitido."); // Executa se pelo menos uma condição for verdadeira
+} Else { // Bloco Else
+    goOutln("Acesso negado."); // Executa caso contrário
+}
+
+
+bool is_vazio = False; // Declaração de booleano, com valor True/False [4]
+bool is_completo = <x> is_vazio; // A variável is_completo recebe o valor oposto de is_vazio usando <x>
+
+InCase (is_completo) { // Condição: Se is_completo for True
+    goOutln("O contêiner não está vazio."); // Executa se is_completo for True
+} Other (<x> is_completo) { // Other com condição: Se NÃO is_completo (ou seja, se is_vazio for True) [1, 2]
+    goOutln("O contêiner está vazio."); // Executa se is_completo for False (ou is_vazio for True)
+}
