@@ -8,7 +8,7 @@
   keywords.put("bool", Token.TokenType.BOOL); </br>
   
 • Deve ter a estrutura de controle if . . . else; </br>
-  keywords.put("InCase", Token.TokenType.IN_CASE); </br>
+- keywords.put("InCase", Token.TokenType.IN_CASE); </br>
   keywords.put("Other", Token.TokenType.OTHER); </br>
   keywords.put("Else", Token.TokenType.ELSE); </br>
    
@@ -28,13 +28,14 @@ InCase (x > y){
 ```
 </br>
 • Deve ter ao menos duas estruturas de repetição (while, do . . . while, for); </br>
-  keywords.put("Echo", Token.TokenType.ECHO); </br>
+
+- keywords.put("Echo", Token.TokenType.ECHO); </br>
   keywords.put("Play", Token.TokenType.PLAY); </br>
   keywords.put("Over", Token.TokenType.OVER); </br>
   </br>
 • Deve possibilitar laços encadeados </br>
 
-  ```
+```
   Fx intx main() { 
     intx x = 3; 
     intx y = 4; 
@@ -43,12 +44,10 @@ InCase (x > y){
         y--; 
         } 
     Over(y == 0); 
-    }
-
-    
+    }    
 ```
 
-    </br>
+</br>
 • A parte de expressões envolvendo os operadores matemáticos deve ser realizada de maneira
 correta, respeitando a precedência. </br>
 
@@ -72,13 +71,17 @@ correta, respeitando a precedência. </br>
     }
     
 ```
+
+
 </br>
     
 • Os comandos de leitura do teclado (Scanner, scanf, input, etc) e de impressão na tela (print)
 devem ser disponibilizados. </br>
-    keywords.put("goOut", Token.TokenType.GO_OUT); </br>
+
+  - keywords.put("goOut", Token.TokenType.GO_OUT); </br>
     keywords.put("goOutln", Token.TokenType.GO_OUTLN); </br>
     keywords.put("plugIn", Token.TokenType.PLUG_IN); </br>
+    
 • O compilador tem que aceitar números decimais. </br>
 
 ```
@@ -95,8 +98,9 @@ devem ser disponibilizados. </br>
     
 </br>
 • O compilador deve ter mensagens de erros. 
-  
+</br>
 • A cada utilização de uma variável, é necessário verificar se ela já foi declarada.
+</br>
 • É necessário verificar se é possível realizar as operações, devido aos tipos das variáveis e ao
 seu escopo.
 
