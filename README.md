@@ -7,12 +7,12 @@
   keywords.put("strx", Token.TokenType.STRX); </br>
   keywords.put("bool", Token.TokenType.BOOL); </br>
   
-• Deve ter a estrutura de controle if . . . else;
+• Deve ter a estrutura de controle if . . . else; </br>
   keywords.put("InCase", Token.TokenType.IN_CASE); </br>
   keywords.put("Other", Token.TokenType.OTHER); </br>
   keywords.put("Else", Token.TokenType.ELSE); </br>
    
-• Deve possibilitar ifs encadeados
+• Deve possibilitar ifs encadeados </br>
   Fx intx main() { 
     intx x = 3; 
     intx y = 4; 
@@ -24,11 +24,12 @@ InCase (x > y){
 	} 
     } 
 } 
-• Deve ter ao menos duas estruturas de repetição (while, do . . . while, for);
+</br>
+• Deve ter ao menos duas estruturas de repetição (while, do . . . while, for); </br>
   keywords.put("Echo", Token.TokenType.ECHO); </br>
   keywords.put("Play", Token.TokenType.PLAY); </br>
   keywords.put("Over", Token.TokenType.OVER); </br>
-• Deve possibilitar laços encadeados
+• Deve possibilitar laços encadeados </br>
   Fx intx main() { 
     intx x = 3; 
     intx y = 4; 
@@ -38,8 +39,9 @@ InCase (x > y){
         } 
     Over(y == 0); 
     } 
+    </br>
 • A parte de expressões envolvendo os operadores matemáticos deve ser realizada de maneira
-correta, respeitando a precedência.
+correta, respeitando a precedência. </br>
     Fx intx main() { 
     intx x = 3; 
     intx y = 4; 
@@ -47,18 +49,19 @@ correta, respeitando a precedência.
     intx conta = x + y * c; 
        goOut(conta); 
 } </br>
-• As atribuições também devem ser realizadas;
+• As atribuições também devem ser realizadas; </br>
     Fx intx main() { 
     intx x = 3;
     intx y = 4;
     intx c = 2;
     }
+    </br>
 • Os comandos de leitura do teclado (Scanner, scanf, input, etc) e de impressão na tela (print)
-devem ser disponibilizados.
+devem ser disponibilizados. </br>
     keywords.put("goOut", Token.TokenType.GO_OUT); </br>
     keywords.put("goOutln", Token.TokenType.GO_OUTLN); </br>
     keywords.put("plugIn", Token.TokenType.PLUG_IN); </br>
-• O compilador tem que aceitar números decimais.
+• O compilador tem que aceitar números decimais. </br>
  private Token number() {
         while (Character.isDigit(peek())) advance();
         if (peek() == '.' && Character.isDigit(peekNext())) {
@@ -68,7 +71,8 @@ devem ser disponibilizados.
         }
         return makeToken(Token.TokenType.LITERAL_INT);
     }
-• O compilador deve ter mensagens de erros.
+    </br>
+• O compilador deve ter mensagens de erros. 
   
 • A cada utilização de uma variável, é necessário verificar se ela já foi declarada.
 • É necessário verificar se é possível realizar as operações, devido aos tipos das variáveis e ao
