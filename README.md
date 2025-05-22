@@ -3,61 +3,61 @@
 
 • Deve ter, no mínimo, 3 tipos de variáveis </br>
 - keywords.put("intx", Token.TokenType.INTX); </br>
-  keywords.put("flx", Token.TokenType.FLX);
-  keywords.put("strx", Token.TokenType.STRX);
-  keywords.put("bool", Token.TokenType.BOOL);
+  keywords.put("flx", Token.TokenType.FLX); </br>
+  keywords.put("strx", Token.TokenType.STRX); </br>
+  keywords.put("bool", Token.TokenType.BOOL); </br>
   
 • Deve ter a estrutura de controle if . . . else;
-  keywords.put("InCase", Token.TokenType.IN_CASE);
-  keywords.put("Other", Token.TokenType.OTHER);
-  keywords.put("Else", Token.TokenType.ELSE);
+  keywords.put("InCase", Token.TokenType.IN_CASE); </br>
+  keywords.put("Other", Token.TokenType.OTHER); </br>
+  keywords.put("Else", Token.TokenType.ELSE); </br>
    
 • Deve possibilitar ifs encadeados
-  Fx intx main() {
-    intx x = 3;
-    intx y = 4;
+  Fx intx main() { 
+    intx x = 3; 
+    intx y = 4; 
     intx c = 2;
 
-InCase (x > y){
-	InCase(x > c){
+InCase (x > y){ 
+	InCase(x > c) 
     		goOut("x é maior");
-	}
-    }
-}
+	} 
+    } 
+} 
 • Deve ter ao menos duas estruturas de repetição (while, do . . . while, for);
-  keywords.put("Echo", Token.TokenType.ECHO);
-  keywords.put("Play", Token.TokenType.PLAY);
-  keywords.put("Over", Token.TokenType.OVER);
+  keywords.put("Echo", Token.TokenType.ECHO); </br>
+  keywords.put("Play", Token.TokenType.PLAY); </br>
+  keywords.put("Over", Token.TokenType.OVER); </br>
 • Deve possibilitar laços encadeados
-  Fx intx main() {
-    intx x = 3
-    intx y = 4
-    InCase (x > y){
-    Play{
-        y--;
-        }
-    Over(y == 0);
-    }
+  Fx intx main() { 
+    intx x = 3; 
+    intx y = 4; 
+    InCase (x > y){ 
+    Play{ 
+        y--; 
+        } 
+    Over(y == 0); 
+    } 
 • A parte de expressões envolvendo os operadores matemáticos deve ser realizada de maneira
 correta, respeitando a precedência.
-    Fx intx main() {
-    intx x = 3;
-    intx y = 4;
-    intx c = 2;
-    intx conta = x + y * c;
-       goOut(conta);
-}
+    Fx intx main() { 
+    intx x = 3; 
+    intx y = 4; 
+    intx c = 2; 
+    intx conta = x + y * c; 
+       goOut(conta); 
+} </br>
 • As atribuições também devem ser realizadas;
-    Fx intx main() {
+    Fx intx main() { 
     intx x = 3;
     intx y = 4;
     intx c = 2;
     }
 • Os comandos de leitura do teclado (Scanner, scanf, input, etc) e de impressão na tela (print)
 devem ser disponibilizados.
-    keywords.put("goOut", Token.TokenType.GO_OUT);
-    keywords.put("goOutln", Token.TokenType.GO_OUTLN);
-    keywords.put("plugIn", Token.TokenType.PLUG_IN);
+    keywords.put("goOut", Token.TokenType.GO_OUT); </br>
+    keywords.put("goOutln", Token.TokenType.GO_OUTLN); </br>
+    keywords.put("plugIn", Token.TokenType.PLUG_IN); </br>
 • O compilador tem que aceitar números decimais.
  private Token number() {
         while (Character.isDigit(peek())) advance();
