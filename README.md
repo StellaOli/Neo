@@ -1,7 +1,7 @@
 # Neo
 <h1> Desenvolvimento de um compilador </h1> </br>
 
-• Deve ter, no mínimo, 3 tipos de variáveis
+• Deve ter, no mínimo, 3 tipos de variáveis </br>
 - keywords.put("intx", Token.TokenType.INTX);
   keywords.put("flx", Token.TokenType.FLX);
   keywords.put("strx", Token.TokenType.STRX);
